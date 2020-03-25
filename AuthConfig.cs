@@ -21,15 +21,14 @@ namespace SecureClient
         }
         public string ClientSecret { get; set; }
         public string BaseAddress { get; set; }
-        public string ResourceId { get; set; }
+        public string ResourceID { get; set; }
 
-        public static AuthConfig ReadJsonFromFile(string path)
+        public static AuthConfig ReadFromJsonFile(string path)
         {
             IConfiguration Configuration;
 
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(path);
+            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile(path);
+
             Configuration = builder.Build();
 
             return Configuration.Get<AuthConfig>();
