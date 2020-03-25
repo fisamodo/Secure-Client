@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace SecureClient
 {
-    class AuthConfig
+    public class AuthConfig
     {
         public string Instance { get; set; }
         public string TenantId { get; set; }
@@ -20,12 +20,12 @@ namespace SecureClient
             }
         }
         public string ClientSecret { get; set; }
-        public string BaseAdress { get; set; }
+        public string BaseAddress { get; set; }
         public string ResourceId { get; set; }
 
         public static AuthConfig ReadJsonFromFile(string path)
         {
-            IConfiguration Configuration:
+            IConfiguration Configuration;
 
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
